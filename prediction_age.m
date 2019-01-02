@@ -1,1 +1,1 @@
-% Prédiction de l'age grâce au réseau de neurones + résultats
+% Prédiction de l'age grâce au classifieur
