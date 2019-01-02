@@ -7,7 +7,7 @@ img = imread('test.jpg');
 faceDetector = vision.CascadeObjectDetector();
 box = step(faceDetector, img);
 imgBoxed = insertObjectAnnotation(img,'rectangle', box, 'Visage');
-imgCropped = imcrop(img, box(1,:));
+imgCropped = imcrop(img, box(1, :));
 
 % Affichage
 figure, 
