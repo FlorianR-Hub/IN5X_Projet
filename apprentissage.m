@@ -13,32 +13,27 @@ for trancheAge = 30 : 10 : 50
 
         imgCropped = decoupage(img);
         imgContours = contours(imgCropped);
+        partiesVisage = traitement(imgCropped);
 
-        rect1 = [0 0 10 10];
-        rect2 = [100 100 50 50];
-        rects = [rect1 ; rect2];
-        %rects = traitement(img);
+        imgBoxed = uint8(imgContours * 255);
+        ratios = [];
 
-        imgBoxed = uint8(imgContours*255);
-        features = [];
-
-        for j = 1 : size(rects, 1)
-            box = rects(j, :);
+        for j = 1 : size(partiesVisage, 1)
+            box = partiesVisage(j, :);
             imgBoxed = insertObjectAnnotation(imgBoxed, 'rectangle', box, strcat('rect', num2str(j)));
-            imgCropped = imcrop(imgContours, box(1, :));
+            partieVisage = imcrop(imgContours, box(1, :));
 
-            whitePixels = sum(sum(imgCropped == 1));
-            totalPixels = sum(sum(imgCropped == 0)) + whitePixels;
-
+            whitePixels = sum(sum(partieVisage == 1));
+            totalPixels = sum(sum(partieVisage == 0)) + whitePixels;
             ratio = whitePixels / totalPixels;
 
-            features = [features ratio]; %#ok<*AGROW>
+            ratios = [ratios ratio]; %#ok<*AGROW>
         end
 
-        V = [V ; features]; %#ok<*AGROW>
+        V = [V ; ratios]; %#ok<*AGROW>
         
         % Affichage
-        %figure, imshow(imgBoxed);
+        figure, imshow(imgBoxed);
     end
     
     filename = strcat('apprentissage/tranche_age_', num2str(trancheAge), '.csv');
