@@ -1,8 +1,10 @@
-% D?coupage du visage
-close all;
-clear, clc;
+% Découpage du visage
+function imgCropped = decoupage(nomImg)
 
-img = imread('test.jpg');
+close all;
+clc;
+
+img = imread(nomImg);
 
 faceDetector = vision.CascadeObjectDetector();
 box = step(faceDetector, img);
@@ -13,3 +15,5 @@ imgCropped = imcrop(img, box(1, :));
 figure, 
 subplot(1, 2, 1), imshow(imgBoxed);
 subplot(1, 2, 2), imshow(imgCropped);
+
+end
