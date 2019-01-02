@@ -29,11 +29,11 @@ for trancheAge = 30 : 10 : 50
 
             ratios = [ratios ratio]; %#ok<*AGROW>
         end
-
+        
         V = [V ; ratios]; %#ok<*AGROW>
         
         % Affichage
-        figure, imshow(imgBoxed);
+        %figure, imshow(imgBoxed);
     end
     
     filename = strcat('apprentissage/tranche_age_', num2str(trancheAge), '.csv');
