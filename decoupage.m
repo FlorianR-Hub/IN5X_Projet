@@ -2,7 +2,7 @@
 
 clear, clc;
 
-img = imread('12.jpg');
+img = imread('test.jpg');
 
 faceDetector = vision.CascadeObjectDetector();
 box = step(faceDetector, img);
