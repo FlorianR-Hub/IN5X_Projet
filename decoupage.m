@@ -1,10 +1,5 @@
 % Découpage du visage
-function imgCropped = decoupage(nomImg)
-
-close all;
-clc;
-
-img = imread(nomImg);
+function imgCropped = decoupage(img)
 
 faceDetector = vision.CascadeObjectDetector();
 box = step(faceDetector, img);
