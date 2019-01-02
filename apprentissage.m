@@ -1,0 +1,1 @@
+% Apprentissage avec un réseau de neurones
