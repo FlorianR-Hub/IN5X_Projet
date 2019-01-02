@@ -4,6 +4,6 @@ imgGray = rgb2gray(img);
 imgContours = edge(imgGray, 'Canny');
 
 % Affichage
-figure, imshow(imgContours);
+%figure, imshow(imgContours);
 
 end
