@@ -16,21 +16,21 @@ for trancheAge = 30 : 10 : 50
         partiesVisage = traitement(imgCropped);
 
         imgBoxed = uint8(imgContours * 255);
-        ratios = [];
+        sommeRatios = 0;
 
         for j = 1 : size(partiesVisage, 1)
             box = partiesVisage(j, :);
-            imgBoxed = insertObjectAnnotation(imgBoxed, 'rectangle', box, strcat('rect', num2str(j)));
+            imgBoxed = insertObjectAnnotation(imgBoxed, 'rectangle', box, '');
             partieVisage = imcrop(imgContours, box(1, :));
 
             whitePixels = sum(sum(partieVisage == 1));
             totalPixels = sum(sum(partieVisage == 0)) + whitePixels;
             ratio = whitePixels / totalPixels;
 
-            ratios = [ratios ratio]; %#ok<*AGROW>
+            sommeRatios = sommeRatios + ratio; %#ok<*AGROW>
         end
         
-        V = [V ; ratios]; %#ok<*AGROW>
+        V = [V ; sommeRatios]; %#ok<*AGROW>
         
         % Affichage
         %figure, imshow(imgBoxed);

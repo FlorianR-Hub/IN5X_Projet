@@ -40,9 +40,9 @@ entreYeuxRectangle(4) = distanceMilieuYeux * 0.4;
 imgBoxed = insertObjectAnnotation(imgBoxed, 'rectangle', entreYeuxRectangle, '', 'Color', {'cyan'});
 
 %% AFFICHAGE
-figure, 
-subplot(1, 2, 1), imshow(imgBoxed);
-subplot(1, 2, 2), imshow(imgDecoupee);
+%figure, 
+%subplot(1, 2, 1), imshow(imgBoxed);
+%subplot(1, 2, 2), imshow(imgDecoupee);
 
 %% RETOUR
 partiesVisage = [frontRectangle ; entreYeuxRectangle ; joueDroiteRectangle ; joueGaucheRectangle];
