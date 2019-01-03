@@ -35,7 +35,7 @@ for trancheAge = 30 : 10 : 50
         % Affichage
         %figure, imshow(imgBoxed);
     end
-    
+
     filename = strcat('apprentissage/tranche_age_', num2str(trancheAge), '.csv');
     csvwrite(filename, V);
     
