@@ -2,10 +2,10 @@
 close all;
 clear, clc;
 
-V = [];
 for trancheAge = 30 : 10 : 50
     imagefiles = dir(fullfile('database', num2str(trancheAge),'*.jpg'));
     nfiles = length(imagefiles);
+    V = [];
 
     for i = 1 : nfiles
         currentfilename = imagefiles(i).name;
