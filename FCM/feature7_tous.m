@@ -7,7 +7,7 @@ function features = feature7_tous(folder)
        A = sscanf(imagefiles(i).name,'%d_%d');
        age = A(2);
        features(i,1) = age;
-       features(i,2) = getSommeRatios(imread(imagefiles(i).name));
+       features(i,2) = getSommeRatios(imread(fullfile(folder,imagefiles(i).name)));
     end
 end
 
