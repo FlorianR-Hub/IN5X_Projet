@@ -1,5 +1,5 @@
 % calcul de la feature du visage
-function sommeRatios = feature7(img)        
+function sommeRatios = getSommeRatios(img)        
         imgCropped = decoupage(img);
         imgContours = contours(imgCropped);
         partiesVisage = traitement(imgCropped);

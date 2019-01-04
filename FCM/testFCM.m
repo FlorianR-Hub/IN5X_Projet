@@ -1,7 +1,7 @@
 %calcul du delta année à partir d'un dossier
 classifieur = csvread('apprentissage\FCM.csv');
-delta = decisionFCM_tous(classifieur,'FCM\database_test\',2);
-fprintf('Moyenne écart age = %.2f',delta); 
+delta = decisionFCM_tous(classifieur,'database\database_test\', 2);
+fprintf('Moyenne écart age = %.2f\n',delta); 
 
 
 %age detecté pour une image

@@ -1,3 +1,4 @@
+% Renvoie les contours de l'image
 function imgContours = contours(img)
 
 imgGray = rgb2gray(img);

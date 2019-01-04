@@ -1,3 +1,5 @@
+% Test de la détection de la tranche d'âge avec la méthode KPPV
+
 close all;
 clear, clc;
 
@@ -14,3 +16,4 @@ subplot(1, 3, 3), imshow(imgContours), title('Contours');
 
 
 trancheAge = detectionKPPV(img);
+fprintf('Tranche d''âge: %d\n', trancheAge);

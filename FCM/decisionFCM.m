@@ -1,6 +1,6 @@
 % decision de l'age d'une image
 function age = decisionFCM(classifieur,img,m)
-    feature = feature7(img);
+    feature = getSommeRatios(img);
     sumCoeff = 0;
     age = 0;
     for i = 1:size(classifieur,1)
@@ -14,5 +14,5 @@ function age = decisionFCM(classifieur,img,m)
                 age = age + (1/somme) * classifieur(i,1); 
             end
     end
-    age = age/ sumCoeff;
+    age = age / sumCoeff;
 end

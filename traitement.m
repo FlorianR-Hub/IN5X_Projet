@@ -1,4 +1,4 @@
-% R?cup?ration des parties du visage contenant des rides
+% Récupération des parties du visage contenant des rides
 function partiesVisage = traitement(imgDecoupee)
 imgBoxed = imgDecoupee;
 %% TODO SUPPRIMER LES imgBoxed
