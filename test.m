@@ -7,6 +7,10 @@ imgCropped = decoupage(img);
 imgContours = contours(imgCropped);
 
 % Affichage
-figure, 
-subplot(1, 2, 1), imshow(imgCropped), title('Visage');
-subplot(1, 2, 2), imshow(imgContours), title('Contours');
+figure,
+subplot(1, 3, 1), imshow(img), title('Original');
+subplot(1, 3, 2), imshow(imgCropped), title('Rogné');
+subplot(1, 3, 3), imshow(imgContours), title('Contours');
+
+
+trancheAge = detectionKPPV(img);

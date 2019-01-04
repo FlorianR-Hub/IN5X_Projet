@@ -19,7 +19,7 @@ for j = 1 : size(partiesVisage, 1)
 end
 
 % Read csv
-csvFiles = dir(fullfile('apprentissage','*.csv'));
+csvFiles = dir(fullfile('apprentissage','tranche*.csv'));
 classifieur = [];
 for i = 1 : size(csvFiles,1)
     M = csvread(csvFiles(i).name);
