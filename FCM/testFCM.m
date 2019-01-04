@@ -7,5 +7,6 @@ fprintf('Moyenne écart age = %.2f\n', delta);
 
 
 % Age detecté pour une image
-% img = imread('...');
-% age = decisionFCM([AgeCluster,Cluster],img,2);
+img = imread('57_1957_2014.jpg');
+age = decisionFCM(classifieur, img, 2);
+fprintf('Age détecté = %.2f\n', age);

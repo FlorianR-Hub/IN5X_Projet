@@ -3,7 +3,7 @@
 close all;
 clear, clc;
 
-img = imread('214_36_1975_2011.jpg');
+img = imread('31_1976_2007.jpg');
 
 imgCropped = decoupage(img);
 imgContours = contours(imgCropped);
