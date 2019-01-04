@@ -1,4 +1,4 @@
-%apprentissageFCM
+% Apprentissage FCM
 nbCluster = 6;
 
 m = 2;
@@ -6,7 +6,12 @@ epsillon = 0.00001;
 maxIter = 10000;
 options = [m maxIter epsillon true];
 
-features = feature7_tous('database\database_apprentissage\');
+features = [];
+for trancheAge = 30 : 10 : 80
+    folder = fullfile('database', num2str(trancheAge));
+    features = [features ; getAllFeatures(folder)];
+end
+
 Age = features(:,1);
 Ratios = features(:,2);
 
@@ -26,7 +31,7 @@ for i = 1:size(Ratios,1)
     M(indice,2) = M(indice,2) + Age(i);
 end
 
-% moyenne age = somme des ages / nombre de donnée agglomérés 
+% moyenne age = somme des ages / nombre de données agglomérés 
 for i = 1:size(C,1)
     AgeCluster(i) = M(i,2) / M(i,1);
 end 

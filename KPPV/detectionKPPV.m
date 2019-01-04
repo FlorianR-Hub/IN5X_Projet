@@ -1,6 +1,6 @@
 function trancheAge = detectionKPPV(img)
 
-sommeRatios = feature7(img);
+sommeRatios = getSommeRatios(img);
 
 % Read csv
 csvFiles = dir(fullfile('apprentissage','tranche*.csv'));
@@ -17,6 +17,7 @@ classifieur = abs(classifieur - sommeRatios);
 nbVoisin = zeros(size(classifieur,2),1);
 K = 5;
 INF = 999999;
+
 % recherche des k plus proches voisins
 for i = 1:K
     [vectorMin,indiceL] = min(classifieur);
@@ -25,6 +26,7 @@ for i = 1:K
     nbVoisin(indiceC) = nbVoisin(indiceC) + 1;
     classifieur(indice,indiceC) = INF;
 end
+
 % classe retenue = classe avec le maximum de voisin
 [~,indice] = max(nbVoisin);
 trancheAge = sscanf(csvFiles(indice).name,'tranche_age_%d.csv');

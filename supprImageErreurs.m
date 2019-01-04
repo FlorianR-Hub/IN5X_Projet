@@ -6,7 +6,7 @@ for i = 1:size(imagefiles,1)
         %feature =getSommeRatios(imread(fullfile(folder,imagefiles(i).name))); CPU
         img = imread(fullfile(folder,imagefiles(i).name));
         imgCropped = decoupage(img);
-        partiesVisage = traitement(imgCropped);
+        partiesVisage = getCoordPartiesVisage(imgCropped);
         if(any(partiesVisage(:) <0))
             nbfail = nbfail + 1;
             delete(fullfile(folder,imagefiles(i).name));
