@@ -1,7 +1,14 @@
 % Renvoie les contours de l'image
 function imgContours = contours(img)
 
-imgGray = rgb2gray(img);
+[m n c]=size(img);
+
+if c==3
+    imgGray = rgb2gray(img);
+else
+    imgGray = img;
+end
+
 imgContours = edge(imgGray, 'Canny');
 
 % Affichage
