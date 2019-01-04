@@ -7,6 +7,10 @@ for i = 1:size(imagefiles,1)
         img = imread(fullfile(folder,imagefiles(i).name));
         imgCropped = decoupage(img);
         partiesVisage = traitement(imgCropped);
+        if(any(partiesVisage(:) <0))
+            nbfail = nbfail + 1;
+            delete(fullfile(folder,imagefiles(i).name));
+        end
     catch %ME
          nbfail = nbfail + 1;
          delete(fullfile(folder,imagefiles(i).name));
