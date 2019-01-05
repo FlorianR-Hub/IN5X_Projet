@@ -1,5 +1,6 @@
-% calcul feature 7 pour chaque image du folder, avec association de l'age
-%features : matrice 2 colonnes, 1ere colonne l'age, 2eme colonne feature7
+% Calcul la feature du visage pour chaque image du folder, avec association de l'age
+% features : matrice 2 colonnes, 1ere colonne l'age, 2eme colonne la somme
+% des ratios
 function features = getAllFeatures(folder)
     imagefiles = dir(fullfile(folder,'*.jpg'));
     features = [];

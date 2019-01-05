@@ -33,5 +33,7 @@ function sommeRatios = getSommeRatios(img)
     end
         
     % Affichage
-    %figure, imshow(imgBoxed);
+    %figure, 
+    %subplot(1, 2, 1), imshow(img);
+    %subplot(1, 2, 2), imshow(imgBoxed);
 end

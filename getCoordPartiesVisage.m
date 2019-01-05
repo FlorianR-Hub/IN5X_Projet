@@ -1,4 +1,4 @@
-% R?cup?ration des parties du visage contenant des rides
+% Récupération des coordonnées des parties du visage contenant des rides
 function partiesVisage = getCoordPartiesVisage(imgDecoupee)
 imgBoxed = imgDecoupee;
 %% TODO SUPPRIMER LES imgBoxed
@@ -61,12 +61,12 @@ commissureGaucheRect(4) = entreYeuxRectangle(4) * 2;
 imgBoxed = insertObjectAnnotation(imgBoxed, 'rectangle', commissureGaucheRect, '', 'Color', {'cyan'});
 
 %% AFFICHAGE
-figure, 
-subplot(1, 2, 1), imshow(imgBoxed);
-subplot(1, 2, 2), imshow(imgDecoupee);
+%figure, 
+%%subplot(1, 2, 1), imshow(imgBoxed);
+%subplot(1, 2, 2), imshow(imgDecoupee);
 
 %% RETOUR
-partiesVisage = [frontRectangle ; entreYeuxRectangle ; joueDroiteRectangle ; joueGaucheRectangle];
+partiesVisage = [frontRectangle ; entreYeuxRectangle ; joueDroiteRectangle ; joueGaucheRectangle ; commissureDroiteRect ; commissureGaucheRect];
 
 end
 
