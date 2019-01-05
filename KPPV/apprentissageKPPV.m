@@ -11,7 +11,7 @@ for trancheAge = 30 : 10 : 80
     % Pour chaque image de la tranche d'âge
     for i = 1 : nfiles
         currentfilename = imagefiles(i).name;
-        img = imread(currentfilename);
+        img = imread(fullfile('database',num2str(trancheAge),currentfilename));
         
         % Récupère la somme des ratios correspondant au nombre de pixels
         % blanc par rapport au nombre de pixels noirs des différentes
