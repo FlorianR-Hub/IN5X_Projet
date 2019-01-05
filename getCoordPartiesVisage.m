@@ -1,4 +1,4 @@
-% Récupération des parties du visage contenant des rides
+% R?cup?ration des parties du visage contenant des rides
 function partiesVisage = getCoordPartiesVisage(imgDecoupee)
 imgBoxed = imgDecoupee;
 %% TODO SUPPRIMER LES imgBoxed
@@ -37,12 +37,33 @@ entreYeuxRectangle(2) = frontRectangle(2) + frontRectangle(4); %-1
 entreYeuxRectangle(3) = oeilGaucheRectangle(1) - entreYeuxRectangle(1);
 entreYeuxRectangle(4) = distanceMilieuYeux * 0.4;
 
+if(entreYeuxRectangle(3) < distanceMilieuYeux * 0.4)
+    ajustEntreYeuxRectX = (distanceMilieuYeux * 0.4 - entreYeuxRectangle(3)) / 2;
+    entreYeuxRectangle(1) = entreYeuxRectangle(1) - ajustEntreYeuxRectX;
+    entreYeuxRectangle(3) = distanceMilieuYeux * 0.4;
+end
+
 imgBoxed = insertObjectAnnotation(imgBoxed, 'rectangle', entreYeuxRectangle, '', 'Color', {'cyan'});
 
+%% COMMISSURES GAUCHE ET DROITE DES YEUX
+commissureDroiteRect(1) = entreYeuxRectangle(1) - (entreYeuxRectangle(3) * 2);
+commissureDroiteRect(2) = yeuxRectangle2(1, 2);
+commissureDroiteRect(3) = entreYeuxRectangle(3) / 2;
+commissureDroiteRect(4) = entreYeuxRectangle(4) * 2;
+
+imgBoxed = insertObjectAnnotation(imgBoxed, 'rectangle', commissureDroiteRect, '', 'Color', {'cyan'});
+
+commissureGaucheRect(1) = entreYeuxRectangle(1) + (entreYeuxRectangle(3) * 2.5);
+commissureGaucheRect(2) = yeuxRectangle2(2, 2);
+commissureGaucheRect(3) = entreYeuxRectangle(3) / 2;
+commissureGaucheRect(4) = entreYeuxRectangle(4) * 2;
+
+imgBoxed = insertObjectAnnotation(imgBoxed, 'rectangle', commissureGaucheRect, '', 'Color', {'cyan'});
+
 %% AFFICHAGE
-%figure, 
-%subplot(1, 2, 1), imshow(imgBoxed);
-%subplot(1, 2, 2), imshow(imgDecoupee);
+figure, 
+subplot(1, 2, 1), imshow(imgBoxed);
+subplot(1, 2, 2), imshow(imgDecoupee);
 
 %% RETOUR
 partiesVisage = [frontRectangle ; entreYeuxRectangle ; joueDroiteRectangle ; joueGaucheRectangle];
