@@ -1,7 +1,7 @@
 % Apprentissage FCM
-nbCluster = 6;
+nbCluster = 7;
 
-m = 2;
+m = 2.2;
 epsillon = 1e-05;
 maxIter = 100;
 options = [m maxIter epsillon true];
