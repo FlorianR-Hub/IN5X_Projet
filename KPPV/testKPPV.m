@@ -18,7 +18,7 @@ for i = 1 : size(imagefiles,1)
    deltaTranche = deltaTranche + abs (floor(age/10) - floor(trancheAge/10));
 end
 
-fprintf('Taux de reconnaisance : %d/%d',succes,size(imagefiles,1));
-fprintf('Delta tranche d age moyen = %f',deltaTranche/size(imagefiles,1));
+fprintf('Taux de reconnaisance : %d/%d\n',succes,size(imagefiles,1));
+fprintf('Delta tranche d age moyen = %f\n',deltaTranche/size(imagefiles,1));
 
 

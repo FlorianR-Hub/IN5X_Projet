@@ -7,10 +7,11 @@ maxIter = 100;
 options = [m maxIter epsillon true];
 
 features = [];
-for trancheAge = 30 : 10 : 80
+for trancheAge = 30 : 10 : 70
     folder = fullfile('database', num2str(trancheAge));
     features = [features ; getAllFeatures(folder)];
 end
+csvwrite('apprentissage\all_tranches_age.csv', features);
 
 Age = features(:,1);
 Ratios = features(:,2);
