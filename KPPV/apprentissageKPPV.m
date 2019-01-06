@@ -3,7 +3,7 @@ close all;
 clear, clc;
 
 % Récupère les images correspondant à chaque tranche d'âge
-for trancheAge = 30 : 10 : 80
+for trancheAge = 30 : 10 : 70
     imagefiles = dir(fullfile('database', num2str(trancheAge), '*.jpg'));
     nfiles = length(imagefiles);
     V = [];
