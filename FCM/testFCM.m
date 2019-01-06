@@ -6,8 +6,9 @@ delta = decisionFCM_tous(classifieur,'database\database_test\', 2);
 fprintf('Moyenne écart age = %.2f\n', delta); 
 
 
-%% Age detecté pour une image
-% classifieur = csvread('apprentissage\FCM.csv');
-% img = imread('37_1974_2011_ 12133.jpg');
-% age = decisionFCM(classifieur, img, 2);
-% fprintf('Age détecté = %.2f\n', age);
+%% Age détecté pour une image
+classifieur = csvread('apprentissage\FCM.csv');
+imgName = '51_1960_2011_ 2931.jpg';
+A = sscanf(imgName,'%d_%d');
+ageDetecte = decisionFCM(classifieur, imread(imgName), 2);
+fprintf('Age réel = %d / Age detecté = %.2f\n', A(1), ageDetecte); 

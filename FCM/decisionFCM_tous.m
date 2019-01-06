@@ -8,7 +8,7 @@ function deltaAnnee = decisionFCM_tous(classifieur,folder,m)
        age = A(1);
        ageDetecte = decisionFCM(classifieur,imread(fullfile(folder,imagefiles(i).name)),m);
        deltaAnnee = deltaAnnee + abs(age - ageDetecte);
-       fprintf('Age réel : %d Age detecté = %.2f\n',age,ageDetecte); 
+       fprintf('Age réel = %d / Age detecté = %.2f\n',age,ageDetecte); 
     end
     
     deltaAnnee = deltaAnnee/size(imagefiles,1);
