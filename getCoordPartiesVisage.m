@@ -62,8 +62,8 @@ imgBoxed = insertObjectAnnotation(imgBoxed, 'rectangle', commissureGaucheRect, '
 
 %% AFFICHAGE
 %figure, 
-%%subplot(1, 2, 1), imshow(imgBoxed);
-%subplot(1, 2, 2), imshow(imgDecoupee);
+%subplot(1, 2, 1), imshow(imgDecoupee);
+%subplot(1, 2, 2), imshow(imgBoxed);
 
 %% RETOUR
 partiesVisage = [frontRectangle ; entreYeuxRectangle ; joueDroiteRectangle ; joueGaucheRectangle ; commissureDroiteRect ; commissureGaucheRect];
