@@ -9,6 +9,7 @@ deltaTranche = 0;
 for i = 1 : size(imagefiles,1)
    A = sscanf(imagefiles(i).name,'%d_%d');
    age = A(1);
+   %trancheAge = detectionMinDistance(imread(imagefiles(i).name));
    trancheAge = detectionKPPV(imread(imagefiles(i).name));
    fprintf('Age réel : %d Tranche detecté = %d\n',age,trancheAge); 
    if(floor(age/10) == floor(trancheAge/10))
