@@ -15,42 +15,16 @@ end
 Age = features(:,1);
 Ratios = features(:,2);
 
-[Centres, W] = fcm(features,nbCluster,options);
+[Centres, ~] = fcm(features,nbCluster,options);
 
 % Calcul de l'age moyen de chaque cluster
 % M stocke le nombre de donnés (ratios) aggloméres par un cluster, 
 % ainsi que la somme des ages des données aggloméres, afin de calculer
 % un age moyen pour chaque cluster
 M = zeros(nbCluster,2);
-AgeCluster = zeros(nbCluster,1);
 
 
-% une donnée appartient au cluster dont il a le plus grand degré 
-% d'appartenance
-for i = 1:size(Ratios,1)
-    C = W(:,i);
-    [~,indice] = max(C);
-    M(indice,1) = M(indice,1) + 1;
-    M(indice,2) = M(indice,2) + Age(i);
-end
-
-% moyenne age = somme des ages / nombre de données agglomérés 
-for i = 1:size(C,1)
-    AgeCluster(i) = M(i,2) / M(i,1);
-end 
-
-% Autre méthode : Age = moyenne d'age (Wij * Agej) au lieu du max
-% for i = 1:size(AgeCluster,1)
-%     sommeDegre = 0;
-%     for j = 1:size(W,2)
-%         AgeCluster(i) = AgeCluster(i) + W(i,j) * Age(j);
-%         sommeDegre = sommeDegre + W(i,j);
-%     end
-%     AgeCluster(i) = AgeCluster(i) / sommeDegre;
-% end
-
-
-csvwrite('apprentissage\FCM.csv', [AgeCluster,Centres]);
+csvwrite('apprentissage\FCM.csv', Centres);
 
 display(strcat('Apprentissage FCM terminé !'));
 
