@@ -1,8 +1,8 @@
 % Apprentissage FCM 35 37
-nbCluster = 35;
+nbCluster = 6;
 
 m = 2; %1.7
-epsillon = 0.0000000001;
+epsillon = 1e-05;
 maxIter = 100;
 options = [m maxIter epsillon true];
 
@@ -15,7 +15,7 @@ end
 Age = features(:,1);
 Ratios = features(:,2);
 
-[Centres, W] = fcm(Ratios,nbCluster,options);
+[Centres, W] = fcm(features,nbCluster,options);
 
 % Calcul de l'age moyen de chaque cluster
 % M stocke le nombre de donnés (ratios) aggloméres par un cluster, 
