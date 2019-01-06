@@ -15,7 +15,7 @@ end
 % calcul de distance entre le classifieur et notre ratio
 classifieur = abs(classifieur - sommeRatios);
 nbVoisin = zeros(size(classifieur,2),1);
-K = 5;
+K = 11;
 INF = 999999;
 
 % recherche des k plus proches voisins
