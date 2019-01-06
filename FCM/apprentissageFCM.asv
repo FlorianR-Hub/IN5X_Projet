@@ -27,17 +27,17 @@ AgeCluster = zeros(nbCluster,1);
 
 % une donnée appartient au cluster dont il a le plus grand degré 
 % d'appartenance
-for i = 1:size(Ratios,1)
-    C = W(:,i);
-    [~,indice] = max(C);
-    M(indice,1) = M(indice,1) + 1;
-    M(indice,2) = M(indice,2) + Age(i);
-end
-
-% moyenne age = somme des ages / nombre de données agglomérés 
-for i = 1:size(C,1)
-    AgeCluster(i) = M(i,2) / M(i,1);
-end 
+% for i = 1:size(Ratios,1)
+%     C = W(:,i);
+%     [~,indice] = max(C);
+%     M(indice,1) = M(indice,1) + 1;
+%     M(indice,2) = M(indice,2) + Age(i);
+% end
+% 
+% % moyenne age = somme des ages / nombre de données agglomérés 
+% for i = 1:size(C,1)
+%     AgeCluster(i) = M(i,2) / M(i,1);
+% end 
 
 % Autre méthode : Age = moyenne d'age (Wij * Agej) au lieu du max
 % for i = 1:size(AgeCluster,1)

@@ -7,7 +7,7 @@ fprintf('Moyenne écart age = %.2f\n', delta);
 
 
 %% Age detecté pour une image
-classifieur = csvread('apprentissage\FCM.csv');
-img = imread('37_1974_2011_ 12133.jpg');
-age = decisionFCM(classifieur, img, 2);
-fprintf('Age détecté = %.2f\n', age);
+% classifieur = csvread('apprentissage\FCM.csv');
+% img = imread('37_1974_2011_ 12133.jpg');
+% age = decisionFCM(classifieur, img, 2);
+% fprintf('Age détecté = %.2f\n', age);
