@@ -1,5 +1,5 @@
 % Decision de l'age d'une image
-% On calcule le degré d'appartenance Pi du ratio aux clusters
+% On calcule le degrï¿½ d'appartenance Pi du ratio aux clusters
 % age = somme (Pi * age_cluster_i) / somme (Pi)
 
 function age = decisionFCM(classifieur, img, m)
@@ -12,9 +12,9 @@ function age = decisionFCM(classifieur, img, m)
                 dist = feature - classifieur(i,2);
                 somme = 0;
                 for j = 1 : size(classifieur,1)
-                    somme = somme +(dist / feature - classifieur(j,2))^(2 / (m-1));
+                    somme = somme +(dist / (feature - classifieur(j,2)))^(2 / (m-1));
                 end
-                % 1/somme = degré d'appartenance de l'image au cluster i
+                % 1/somme = degrï¿½ d'appartenance de l'image au cluster i
                 sumCoeff = sumCoeff + (1 / somme^exp);
                 age = age + (1 / somme^exp) * classifieur(i,1); 
             end
