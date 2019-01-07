@@ -1,6 +1,9 @@
 # Projet IN5X - Notice d’utilisation
 
-Note : tous les scripts sont à exécuter depuis le dossier racine du projet.
+**Notes :** 
+* Avant toute chose, ajoutez les dossier et les sous-dossiers de **apprentissage**, **database**, **FCM** et **KPPV** au *path* de Matlab.
+* Tous les scripts sont à exécuter depuis le dossier racine du projet.
+
 
 ## Méthode KPPV
 
