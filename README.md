@@ -1,7 +1,7 @@
 # Projet IN5X - Notice d’utilisation
 
 **Notes :** 
-* Avant toute chose, ajoutez les dossier et les sous-dossiers de **apprentissage**, **database**, **FCM** et **KPPV** au *path* de Matlab.
+* Avant toute chose, ajoutez les dossiers (et sous-dossiers) **apprentissage**, **database**, **FCM** et **KPPV** au *path* de Matlab.
 * Tous les scripts sont à exécuter depuis le dossier racine du projet.
 
 
